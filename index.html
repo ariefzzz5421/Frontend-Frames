@@ -252,15 +252,22 @@
     }
     function captionLine(mask,value,dir,initial){
       if(initial||reduced.matches){mask.replaceChildren(Object.assign(document.createElement('span'),{textContent:value}));return}
-      const line=document.createElement('span');line.textContent=value;mask.append(line);
-      line.animate([{transform:'translateY('+(dir*105)+'%)'},{transform:'translateY(0)'}],{duration:650,easing:'cubic-bezier(.2,.8,.2,1)',fill:'both'}).onfinish=()=>{
-        if(line.isConnected){line.style.transform='translateY(0)';line.getAnimations().forEach(a=>a.cancel())}
+      // Keep one current line and one outgoing line at most. A previous
+      // entrance must never cancel the exit animation of the same span.
+      const previous=mask.lastElementChild;
+      const from=previous?getComputedStyle(previous).transform:'none';
+      [...mask.children].forEach(el=>{el.getAnimations().forEach(a=>a.cancel());if(el!==previous)el.remove()});
+      const line=document.createElement('span');line.textContent=value;
+      mask.append(line);
+      const incoming=line.animate([{transform:'translateY('+(dir*105)+'%)'},{transform:'translateY(0)'}],{duration:650,easing:'cubic-bezier(.2,.8,.2,1)',fill:'both'});
+      incoming.onfinish=()=>{
+        incoming.cancel();
+        if(line.isConnected&&mask.lastElementChild===line)line.style.transform='translateY(0)';
       };
-      [...mask.children].filter(el=>el!==line&&!el.dataset.leaving).forEach(el=>{
-        el.dataset.leaving='1';
-        const from=getComputedStyle(el).transform;
-        el.animate([{transform:from==='none'?'translateY(0)':from},{transform:'translateY('+(-dir*105)+'%)'}],{duration:650,easing:'cubic-bezier(.2,.8,.2,1)',fill:'both'}).onfinish=()=>el.remove();
-      });
+      if(previous){
+        const outgoing=previous.animate([{transform:from==='none'?'translateY(0)':from},{transform:'translateY('+(-dir*105)+'%)'}],{duration:650,easing:'cubic-bezier(.2,.8,.2,1)',fill:'both'});
+        outgoing.onfinish=()=>previous.remove();
+      }
     }
     function setActive(i,dir,initial=false){
       active=mod(i,12);const f=FILMS[active];

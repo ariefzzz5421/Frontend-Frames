@@ -1,0 +1,35 @@
+:root {
+  --color-paper: oklch(95% 0.008 83);
+  --color-sheet: oklch(98% 0.004 83);
+  --color-ink: oklch(21% 0.01 60);
+  --color-muted: oklch(49% 0.012 74);
+  --color-accent: oklch(44% 0.17 263);
+  --color-rule: oklch(73% 0.01 74);
+  --color-rule-strong: oklch(34% 0.012 60);
+  --color-on-accent: oklch(99% 0.002 83);
+  --color-shadow: oklch(21% 0.01 60 / .2);
+  --color-scrim: oklch(21% 0.01 60 / .65);
+  --font-display: "Newsreader", Georgia, serif;
+  --font-body: "Inter Tight", system-ui, sans-serif;
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --text-xs: 0.72rem;
+  --text-sm: 0.86rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-display: clamp(3.2rem, 8.5vw, 8.75rem);
+  --ease-out: cubic-bezier(.2,.8,.2,1);
+  --ease-in: cubic-bezier(.8,0,1,.2);
+  --ease-in-out: cubic-bezier(.76,0,.18,1);
+  --dur-short: 160ms;
+  --dur-medium: 280ms;
+  --dur-long: 520ms;
+  --rule-hair: 1px;
+  --radius-small: 2px;
+}

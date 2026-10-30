@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-31",
+  "framework": "Vanilla HTML, CSS, and JavaScript",
+  "fontStack": ["Newsreader", "Inter Tight", "Noto Sans JP", "Noto Serif SC"],
+  "palette": ["warm paper", "ink", "cobalt accent"],
+  "motion": "Web Animations API and requestAnimationFrame in the filmography; no motion library",
+  "spacing": "No shared spacing system before dashboard"
+}
