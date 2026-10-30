@@ -5,7 +5,7 @@ This repository contains two static sites:
 - [Leon Vasari filmography](index.html), the interactive VHS shelf.
 - [Ariefz Frames dashboard](dashboard/index.html), the collection home with a live-site link and a copyable [original build prompt](dashboard/prompts/leon-vasari.txt).
 
-The filmography is deployed at https://frontend-design-woad.vercel.app/. The dashboard lives in a separate Vercel project whose root directory is dashboard/, so both sites can deploy from the same repository without changing the filmography URL.
+The filmography is deployed at https://frontend-design-woad.vercel.app/ and links back to the collection at https://ariefz-frames.vercel.app/. The dashboard lives in a separate Vercel project whose root directory is dashboard/, so both sites can deploy from the same repository without changing the filmography URL. The custom domain frames.ariefz.xyz is attached to the dashboard project and awaits a CNAME record at the external DNS provider.
 
 ## Run locally
 
