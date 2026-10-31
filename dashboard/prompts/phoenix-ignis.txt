@@ -1,0 +1,7 @@
+Create Phoenix Ignis, a mythical creature field guide displayed like a quiet natural-history museum plate. This recreation brief was independently written for Frontend Frames; visual reference: MotionSites AI, https://motionsites.ai/.
+
+Use warm sandstone paper, fine rules, archival serif headings, compact catalogue text, and a three-part desktop layout: collection sidebar, interactive specimen stage, and detailed record card. Start with a crimson phoenix, with a kraken as a second selectable specimen. Give each creature a thumbnail, Latin name, tags, short legend, era marker, field notes, habitat, and close-up control. Keep the labels clear that these are mythological accounts.
+
+Render real GLB models with Three.js and suitable GLTF compression decoders. Show the image immediately while the large model loads, and retain that image with an honest status if 3D cannot load. Users should be able to drag to rotate, use inertia, wheel or buttons to zoom, turn in steps, reset, expand the stage, and switch between daylight and dusk lighting. Changing specimens should swap both the model and catalogue content with a short transition. Load the second heavy model only when requested.
+
+On mobile, put compact specimen tabs above the stage and move the catalogue to a scrollable bottom panel. Keep the back link, touch controls, keyboard access, loading feedback, and reduced-motion behavior. Avoid horizontal overflow and make the page deployable as a standalone static route.

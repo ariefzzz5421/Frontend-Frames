@@ -2,218 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#eeece7">
-  <meta name="description" content="Frontend Frames: an expanding collection of interactive web designs and copyable recreation prompts.">
-  <title>Frontend Frames — Interface Archive</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23eeece7'/%3E%3Cpath d='M13 13h38v38H13z' fill='none' stroke='%231F3FB0' stroke-width='3'/%3E%3Cpath d='M22 41V22h19M22 31h15' fill='none' stroke='%231F3FB0' stroke-width='4'/%3E%3C/svg%3E">
+  <meta name="description" content="Frontend Frames is an editorial archive of six interactive web design worlds, each with its own page and copyable recreation brief.">
+  <title>Frontend Frames — An Interface Magazine</title>
+  <link rel="icon" href="./favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./tokens.css">
-  <style>
-    /* Hallmark · pre-emit critique: P4 H4 E4 S5 R5 V4 */
-    /* Hallmark · macrostructure: Portfolio Grid · nav: N6 masthead · footer: Ft2 inline rule · theme: Newsprint cobalt variant · tone: editorial · anchor hue: cobalt */
-    *,*::before,*::after{box-sizing:border-box}
-    html,body{margin:0;min-width:0;overflow-x:clip}
-    html{scroll-behavior:smooth}
-    body{background:var(--color-paper);color:var(--color-ink);font-family:var(--font-body);font-size:var(--text-base);-webkit-font-smoothing:antialiased}
-    button,a{font:inherit}
-    a{color:inherit;text-decoration:none}
-    button{cursor:pointer}
-    :focus-visible{outline:2px solid var(--color-accent);outline-offset:4px}
-    .page{width:min(100% - clamp(32px,6vw,96px),1480px);margin-inline:auto}
-    .micro{font-size:var(--text-xs);font-weight:600;line-height:1.3;letter-spacing:.12em;text-transform:uppercase}
-    .mast{padding-top:var(--space-lg);text-align:center}
-    .mast-top{display:flex;justify-content:space-between;gap:var(--space-md);color:var(--color-muted);text-align:left}
-    .mast-top span:last-child{text-align:right}
-    .mast h1{font-family:var(--font-display);font-size:var(--text-display);font-weight:500;line-height:.82;letter-spacing:-.06em;margin:clamp(40px,8vw,108px) 0 var(--space-lg);min-width:0;overflow-wrap:anywhere}
-    .mast h1 span{color:var(--color-accent)}
-    .mast-sub{font-family:var(--font-display);font-size:clamp(1.05rem,2vw,1.5rem);line-height:1.25;margin:0 auto var(--space-2xl);max-width:45ch}
-    .mast-nav{display:flex;justify-content:center;gap:var(--space-xl);margin:0 0 var(--space-sm);padding:0;list-style:none}
-    .mast-nav a{font-size:var(--text-xs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid transparent;padding-bottom:var(--space-2xs)}
-    .mast-nav a:hover{color:var(--color-accent);border-color:var(--color-accent)}
-    .double-rule{height:5px;border-top:var(--rule-hair) solid var(--color-rule-strong);border-bottom:var(--rule-hair) solid var(--color-rule-strong)}
-    main{padding-top:clamp(52px,7vw,112px)}
-    .collection-head{display:flex;align-items:end;justify-content:space-between;gap:var(--space-md);margin-bottom:var(--space-lg)}
-    .collection-head h2{font-family:var(--font-display);font-size:clamp(2.1rem,4vw,4rem);font-weight:400;line-height:1;letter-spacing:-.04em;margin:0;min-width:0;overflow-wrap:anywhere}
-    .count{color:var(--color-muted);margin:0 0 var(--space-2xs)}
-    .filter-line{border-top:var(--rule-hair) solid var(--color-rule-strong);padding:var(--space-sm) 0 var(--space-lg);display:flex;justify-content:space-between;gap:var(--space-md)}
-    .filter-line span:last-child{color:var(--color-muted)}
-    .project-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-xl)}
-    .project{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(280px,.75fr);gap:clamp(24px,4vw,64px);align-items:start;min-width:0}
-    .project-media{display:block;aspect-ratio:16/10;min-width:0;overflow:hidden;background:var(--color-sheet);border:var(--rule-hair) solid var(--color-rule)}
-    .project-media img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform var(--dur-long) var(--ease-out)}
-    .project-media:hover img,.project-media:focus-visible img{transform:scale(1.025)}
-    .project-info{display:flex;flex-direction:column;align-items:flex-start;min-height:100%;padding-top:var(--space-2xs)}
-    .project-type{color:var(--color-accent);margin:0 0 var(--space-lg)}
-    .project-info h3{font-family:var(--font-display);font-size:clamp(2.7rem,4.1vw,5rem);font-weight:400;line-height:.93;letter-spacing:-.045em;margin:0 0 var(--space-lg);overflow-wrap:anywhere}
-    .project-info p:not(.project-type){font-size:var(--text-lg);line-height:1.36;margin:0 0 var(--space-xl);max-width:45ch}
-    .project-details{display:flex;flex-wrap:wrap;gap:var(--space-xs) var(--space-md);color:var(--color-muted);margin:0 0 var(--space-xl)}
-    .project-actions{display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-sm);margin-top:auto}
-    .action{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 var(--space-lg);border:var(--rule-hair) solid var(--color-rule-strong);border-radius:var(--radius-small);background:transparent;color:var(--color-ink);font-size:var(--text-sm);font-weight:600;line-height:1;white-space:nowrap;transition:background var(--dur-medium) var(--ease-out),color var(--dur-medium) var(--ease-out),border-color var(--dur-medium) var(--ease-out)}
-    .action:hover{border-color:var(--color-accent);color:var(--color-accent)}
-    .action:active{transform:translateY(1px)}
-    .action.primary{border-color:var(--color-accent);background:var(--color-accent);color:var(--color-on-accent)}
-    .action.primary:hover{background:var(--color-ink);border-color:var(--color-ink)}
-    .action:disabled{cursor:wait;color:var(--color-muted);border-color:var(--color-rule);background:transparent}
-    .source-note{border-top:var(--rule-hair) solid var(--color-rule);margin-top:clamp(64px,10vw,144px);padding:var(--space-xl) 0 clamp(64px,9vw,128px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-xl)}
-    .source-note h2{font-family:var(--font-display);font-size:clamp(2rem,3.4vw,3.4rem);font-weight:400;line-height:1.03;letter-spacing:-.035em;margin:0;min-width:0;overflow-wrap:anywhere}
-    .source-note p{font-size:var(--text-lg);line-height:1.45;color:var(--color-muted);margin:0;max-width:45ch}
-    .foot{border-top:var(--rule-hair) solid var(--color-rule-strong);display:flex;align-items:center;justify-content:space-between;gap:var(--space-lg);padding:var(--space-lg) 0 var(--space-xl);color:var(--color-muted)}
-    .foot a{color:var(--color-ink);text-decoration:underline;text-underline-offset:3px}
-    .foot a:hover{color:var(--color-accent)}
-    .prompt-dialog{width:min(calc(100% - 32px),980px);height:min(88dvh,800px);max-height:none;padding:0;border:var(--rule-hair) solid var(--color-rule-strong);border-radius:var(--radius-small);background:var(--color-sheet);color:var(--color-ink);box-shadow:0 24px 72px var(--color-shadow)}
-    .prompt-dialog::backdrop{background:var(--color-scrim)}
-    .prompt-inner{height:100%;display:flex;flex-direction:column;min-height:0}
-    .prompt-head{display:flex;align-items:start;justify-content:space-between;gap:var(--space-md);padding:var(--space-lg) var(--space-xl);border-bottom:var(--rule-hair) solid var(--color-rule)}
-    .prompt-head h2{font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.7rem);font-weight:400;margin:var(--space-xs) 0 0;line-height:1}
-    .prompt-close{display:grid;place-items:center;width:44px;height:44px;flex:none;border:var(--rule-hair) solid var(--color-rule-strong);background:transparent;color:var(--color-ink);font-size:1.4rem}
-    .prompt-close:hover{background:var(--color-ink);color:var(--color-sheet)}
-    .prompt-body{flex:1;min-height:0;overflow:auto;padding:var(--space-xl);user-select:text}
-    .prompt-body pre{font-family:var(--font-body);font-size:var(--text-sm);line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
-    .prompt-foot{display:flex;align-items:center;justify-content:space-between;gap:var(--space-md);padding:var(--space-md) var(--space-xl);border-top:var(--rule-hair) solid var(--color-rule)}
-    .prompt-status{color:var(--color-muted);font-size:var(--text-sm);margin:0;min-width:0}
-    .prompt-foot .action{flex:none}
-    @media(max-width:860px){
-      .project{grid-template-columns:minmax(0,1fr)}
-      .project-info{padding:0}
-      .project-actions{margin-top:0}
-    }
-    @media(max-width:600px){
-      .mast{padding-top:var(--space-md)}
-      .mast-top{font-size:.63rem}
-      .mast h1{margin-top:72px;font-size:clamp(3.2rem,14vw,5rem)}
-      .mast-sub{margin-bottom:var(--space-xl)}
-      .mast-nav{gap:var(--space-lg)}
-      main{padding-top:var(--space-2xl)}
-      .collection-head{align-items:baseline}
-      .project-media{aspect-ratio:4/3}
-      .project-info p:not(.project-type){font-size:1.1rem}
-      .project-actions{width:100%}
-      .project-actions .action{flex:1;padding-inline:var(--space-md)}
-      .source-note{grid-template-columns:minmax(0,1fr);gap:var(--space-lg)}
-      .foot{align-items:flex-start;flex-direction:column}
-      .prompt-head,.prompt-body,.prompt-foot{padding-inline:var(--space-md)}
-      .prompt-foot{align-items:flex-start;flex-direction:column}
-      .prompt-foot .action{width:100%}
-    }
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.project-media img,.action{transition:none}}
-  </style>
+  <link rel="stylesheet" href="./magazine.css">
+  <script src="./magazine.js" defer></script>
 </head>
 <body>
-  <header class="mast page">
-    <div class="mast-top micro"><span>FRONTEND FRAMES / INTERFACE ARCHIVE</span><span>INDEPENDENT WEB EXPERIMENTS</span></div>
-    <h1>Frontend <span>Frames</span></h1>
-    <p class="mast-sub">A home for interfaces worth opening, exploring, and learning from.</p>
-    <nav aria-label="Primary"><ul class="mast-nav"><li><a href="#collection">Collection</a></li><li><a href="https://github.com/ariefzzz5421/Frontend-Frames" target="_blank" rel="noopener noreferrer">Repository ↗</a></li></ul></nav>
-    <div class="double-rule" aria-hidden="true"></div>
+  <header class="shell" id="top">
+    <div class="utility micro">
+      <div class="utility-left"><span class="issue-mark">FF / 001</span><span>Independent interface journal</span></div>
+      <div class="utility-right"><span class="edition">Digital edition · 2026</span><a href="https://github.com/ariefzzz5421/Frontend-Frames" target="_blank" rel="noopener noreferrer">Repository ↗</a></div>
+    </div>
+    <div class="masthead">
+      <h1>Frontend<span>Frames.</span></h1>
+      <div class="mast-side"><span class="eyebrow micro">A collection by Ariefz</span><p>Six worlds to open, move through, and learn from.</p><a href="#collection">Explore the issue ↓</a></div>
+    </div>
+    <div class="deck micro"><p>Design studies · Interactive experiments · Copyable recreation briefs</p><span class="arrow" aria-hidden="true">↘</span></div>
   </header>
 
-  <main class="page" id="collection">
-    <section aria-labelledby="collection-title">
-      <div class="collection-head">
-        <h2 id="collection-title">Selected designs</h2>
-        <p class="count micro">02 / 02</p>
-      </div>
-      <div class="filter-line micro"><span>All work</span><span>Browse the live page or its build prompt</span></div>
-      <div class="project-grid">
-        <article class="project">
-          <a class="project-media" href="./designs/leon-vasari/" aria-label="Open Leon Vasari filmography">
-            <img src="./media/leon-vasari.png" width="1440" height="900" alt="Leon Vasari filmography: a row of illustrated VHS tapes with one cover turned toward the viewer" loading="eager" decoding="async">
-          </a>
-          <div class="project-info">
-            <p class="project-type micro">01 / Filmography · Interactive</p>
-            <h3>Leon Vasari</h3>
-            <p>A shelf of fictional films on VHS. Pull out a tape, turn its cover, and open the story behind it.</p>
-            <div class="project-details micro"><span>HTML / CSS / JS</span><span>2026</span></div>
-            <div class="project-actions">
-              <a class="action primary" href="./designs/leon-vasari/">Explore design ↗</a>
-              <button class="action show-prompt" type="button" data-prompt="./prompts/leon-vasari.txt" data-title="Leon Vasari" data-number="01">View & copy prompt</button>
-            </div>
-          </div>
-        </article>
-        <article class="project">
-          <a class="project-media" href="./designs/orvante/" aria-label="Open Orvante branding agency design">
-            <img src="./media/orvante.png" width="1440" height="900" alt="Orvante branding agency: monochrome editorial hero with an oversized title and portrait" loading="lazy" decoding="async">
-          </a>
-          <div class="project-info">
-            <p class="project-type micro">02 / Branding · Editorial</p>
-            <h3>Orvante</h3>
-            <p>A fictional branding studio in monochrome: bold type, moving imagery, a manifesto, and a playful agency story.</p>
-            <div class="project-details micro"><span>HTML / CSS / JS</span><span>2026</span></div>
-            <div class="project-actions">
-              <a class="action primary" href="./designs/orvante/">Explore design ↗</a>
-              <button class="action show-prompt" type="button" data-prompt="./prompts/orvante.txt" data-title="Orvante" data-number="02">View & copy prompt</button>
-            </div>
-          </div>
-        </article>
-      </div>
+  <main class="shell" id="collection">
+    <div class="collection-head">
+      <div><p class="section-no micro">01 / The collection</p><h2>Inside this issue</h2></div>
+      <p>From a paper sea to a glowing orbit and a living myth, every frame has its own scene, controls, and story.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filter designs">
+      <span class="filter-label micro"><span id="shown-count">06</span> designs / browse by type</span>
+      <button class="filter" type="button" data-filter="all" aria-pressed="true">All work</button>
+      <button class="filter" type="button" data-filter="interactive" aria-pressed="false">Interactive</button>
+      <button class="filter" type="button" data-filter="3d" aria-pressed="false">3D worlds</button>
+      <button class="filter" type="button" data-filter="editorial" aria-pressed="false">Editorial</button>
+    </div>
+
+    <section class="stories" id="stories" aria-label="Design stories">
+      <article class="story story--lead" data-tags="interactive">
+        <div class="story-top micro"><span>01 / Cover story</span><span>Illustrated voyage</span></div>
+        <a class="story-media" href="./designs/saltwake/" aria-label="Explore Saltwake"><img src="./media/saltwake.webp" width="1120" height="700" alt="Saltwake's parchment sea with a large pirate ship and ink-drawn waves" fetchpriority="high" decoding="async"></a>
+        <div class="story-body"><p class="story-kicker micro">Interactive / Two scenes</p><h3>Saltwake</h3><p class="story-summary">A storybook pirate voyage. Set sail, watch the water rise, and meet the crew beyond the horizon.</p><div class="story-actions"><a href="./designs/saltwake/">Explore frame ↗</a><button class="prompt-action" type="button" data-prompt="./prompts/saltwake.txt" data-title="Saltwake" data-number="01">View & copy brief ↗</button></div></div>
+      </article>
+
+      <article class="story story--portrait" data-tags="interactive 3d">
+        <div class="story-top micro"><span>02 / Character study</span><span>Space interaction</span></div>
+        <a class="story-media" href="./designs/lumora/" aria-label="Explore Lumora"><img src="./media/lumora.webp" width="1120" height="630" alt="Lumora's space cadet above an orange planetary horizon" loading="eager" decoding="async"></a>
+        <div class="story-body"><p class="story-kicker micro">3D illusion / Motion</p><h3>Lumora</h3><p class="story-summary">A cadet follows your gaze. Press the suit button to lower a glass helmet.</p><div class="story-actions"><a href="./designs/lumora/">Explore frame ↗</a><button class="prompt-action" type="button" data-prompt="./prompts/lumora.txt" data-title="Lumora" data-number="02">View & copy brief ↗</button></div></div>
+      </article>
+
+      <article class="story" data-tags="interactive 3d editorial">
+        <div class="story-top micro"><span>03 / Field notes</span><span>Creature atlas</span></div>
+        <a class="story-media" href="./designs/phoenix-ignis/" aria-label="Explore Phoenix Ignis"><img src="./media/phoenix-ignis.webp" width="1120" height="700" alt="A fiery phoenix model in a warm paper museum field guide" loading="lazy" decoding="async"></a>
+        <div class="story-body"><p class="story-kicker micro">3D / Specimen viewer</p><h3>Phoenix Ignis</h3><p class="story-summary">Turn a phoenix in your hands, switch to a kraken, and read a mythical field guide.</p><div class="story-actions"><a href="./designs/phoenix-ignis/">Explore frame ↗</a><button class="prompt-action" type="button" data-prompt="./prompts/phoenix-ignis.txt" data-title="Phoenix Ignis" data-number="03">View & copy brief ↗</button></div></div>
+      </article>
+
+      <article class="story" data-tags="3d editorial">
+        <div class="story-top micro"><span>04 / Portfolio</span><span>Creator profile</span></div>
+        <a class="story-media" href="./designs/3d-portfolio/" aria-label="Explore 3D Portfolio"><img src="./media/3d-portfolio.webp" width="1120" height="700" alt="Dark 3D creator portfolio with oversized typography and a rendered portrait" loading="lazy" decoding="async"></a>
+        <div class="story-body"><p class="story-kicker micro">React / Portfolio</p><h3>3D Portfolio</h3><p class="story-summary">Meet Jack through oversized type, sculptural imagery, a moving reel, and stacked project studies.</p><div class="story-actions"><a href="./designs/3d-portfolio/">Explore frame ↗</a><button class="prompt-action" type="button" data-prompt="./prompts/3d-portfolio.txt" data-title="3D Portfolio" data-number="04">View & copy brief ↗</button></div></div>
+      </article>
+
+      <article class="story" data-tags="editorial">
+        <div class="story-top micro"><span>05 / Studio profile</span><span>Branding agency</span></div>
+        <a class="story-media" href="./designs/orvante/" aria-label="Explore Orvante"><img src="./media/orvante.webp" width="1120" height="700" alt="Orvante monochrome branding agency hero with a portrait" loading="lazy" decoding="async"></a>
+        <div class="story-body"><p class="story-kicker micro">Editorial / Branding</p><h3>Orvante</h3><p class="story-summary">A restrained monochrome studio, where big type and a moving manifesto carry the story.</p><div class="story-actions"><a href="./designs/orvante/">Explore frame ↗</a><button class="prompt-action" type="button" data-prompt="./prompts/orvante.txt" data-title="Orvante" data-number="05">View & copy brief ↗</button></div></div>
+      </article>
+
+      <article class="story story--wide" data-tags="interactive editorial">
+        <div class="story-top micro"><span>06 / From the archive</span><span>Filmography</span></div>
+        <a class="story-media" href="./designs/leon-vasari/" aria-label="Explore Leon Vasari"><img src="./media/leon-vasari.webp" width="1120" height="700" alt="Leon Vasari filmography as an illustrated shelf of VHS tapes" loading="lazy" decoding="async"></a>
+        <div class="story-body"><p class="story-kicker micro">Film / Interactive archive</p><h3>Leon Vasari</h3><p class="story-summary">A shelf of fictional films on VHS. Pull out a tape, turn its cover, and open the story behind it.</p><div class="story-actions"><a href="./designs/leon-vasari/">Explore frame ↗</a><button class="prompt-action" type="button" data-prompt="./prompts/leon-vasari.txt" data-title="Leon Vasari" data-number="06">View & copy brief ↗</button></div></div>
+      </article>
     </section>
-    <aside class="source-note" aria-label="About the collection">
-      <h2>See the result.<br>Keep the recipe.</h2>
-      <p>Each frame opens as a page in this collection. Copy an independently written recreation prompt to explore how its layout and interactions were built. More designs will join the archive.</p>
-    </aside>
+
+    <aside class="colophon" aria-label="About the collection"><div><p class="section-no micro">02 / Colophon</p><h2>Open the page.<br>Keep the idea.</h2></div><p>Frontend Frames is an evolving journal of interface experiments. Every design lives at its own route, and every card includes an independently written brief you can copy. Visual references are credited to <a href="https://motionsites.ai/" target="_blank" rel="noopener noreferrer">MotionSites AI © 2026</a>.</p></aside>
   </main>
 
-  <footer class="foot page"><span class="micro">© 2026 FRONTEND FRAMES · ORIGINAL DESIGN REFERENCE: <a href="https://motionsites.ai/" target="_blank" rel="noopener noreferrer">MOTIONSITES AI © 2026 ↗</a></span><span class="micro">CURATED BY ARIEFZ · <a href="https://ariefz.xyz/" target="_blank" rel="noopener noreferrer">ARIEFZ.XYZ ↗</a></span></footer>
+  <footer class="foot shell micro"><span>© 2026 FRONTEND FRAMES · CURATED BY ARIEFZ</span><span><a href="https://motionsites.ai/" target="_blank" rel="noopener noreferrer">DESIGN REFERENCE: MOTIONSITES AI ↗</a> · <a href="https://ariefz.xyz/" target="_blank" rel="noopener noreferrer">ARIEFZ.XYZ ↗</a></span></footer>
 
   <dialog class="prompt-dialog" id="prompt-dialog" aria-labelledby="prompt-title">
-    <div class="prompt-inner">
-      <div class="prompt-head"><div><span class="micro" id="prompt-number">RECREATION PROMPT / 01</span><h2 id="prompt-title">Leon Vasari</h2></div><button class="prompt-close" type="button" id="close-prompt" aria-label="Close prompt">×</button></div>
-      <div class="prompt-body"><pre id="prompt-text">Loading prompt…</pre></div>
-      <div class="prompt-foot"><p class="prompt-status" id="prompt-status" role="status">The recreation prompt is shown above.</p><button class="action primary" type="button" id="copy-prompt" disabled>Copy prompt</button></div>
-    </div>
+    <div class="prompt-inner"><div class="prompt-head"><div><span class="micro" id="prompt-number">RECREATION BRIEF / 01</span><h2 id="prompt-title">Saltwake</h2></div><button class="prompt-close" type="button" id="close-prompt" aria-label="Close brief">×</button></div><div class="prompt-body"><pre id="prompt-text">Loading brief…</pre></div><div class="prompt-foot"><p class="prompt-status" id="prompt-status" role="status">The recreation brief is shown above.</p><button class="copy-btn" type="button" id="copy-prompt" disabled>Copy brief</button></div></div>
   </dialog>
-
-  <script>
-    (() => {
-      'use strict';
-      const dialog=document.querySelector('#prompt-dialog');
-      const openButtons=[...document.querySelectorAll('.show-prompt')];
-      const closeButton=document.querySelector('#close-prompt');
-      const copyButton=document.querySelector('#copy-prompt');
-      const text=document.querySelector('#prompt-text');
-      const status=document.querySelector('#prompt-status');
-      const cache=new Map();
-      let prompt=null,returnFocus=null,selection=0;
-      async function loadPrompt(path){
-        if(!cache.has(path))cache.set(path,fetch(path).then(response=>{
-          if(!response.ok)throw new Error('Prompt request failed');
-          return response.text();
-        }).catch(error=>{cache.delete(path);throw error}));
-        return cache.get(path);
-      }
-      openButtons.forEach(button=>button.addEventListener('click',async()=>{
-        const current=++selection;
-        prompt=null;
-        returnFocus=document.activeElement;
-        document.querySelector('#prompt-title').textContent=button.dataset.title;
-        document.querySelector('#prompt-number').textContent='RECREATION PROMPT / '+button.dataset.number;
-        dialog.showModal();
-        closeButton.focus();
-        text.textContent='Loading prompt…';
-        status.textContent='Loading prompt…';
-        copyButton.disabled=true;
-        try{const value=await loadPrompt(button.dataset.prompt);if(current!==selection)return;prompt=value;text.textContent=value;copyButton.disabled=false;status.textContent='The recreation prompt is ready to copy.'}
-        catch{if(current!==selection)return;text.textContent='The prompt could not load. Please try again.';status.textContent='Could not load the prompt.'}
-      }));
-      closeButton.addEventListener('click',()=>dialog.close());
-      dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
-      dialog.addEventListener('close',()=>{selection++;returnFocus?.focus();copyButton.textContent='Copy prompt'});
-      copyButton.addEventListener('click',async()=>{
-        if(prompt===null)return;
-        try{
-          if(navigator.clipboard?.writeText)await navigator.clipboard.writeText(prompt);
-          else{
-            const helper=document.createElement('textarea');helper.value=prompt;helper.style.position='fixed';helper.style.left='-9999px';document.body.append(helper);helper.select();
-            if(!document.execCommand('copy'))throw new Error('Copy was rejected');
-            helper.remove();
-          }
-          copyButton.textContent='Copied';status.textContent='Full prompt copied to clipboard.';
-        }catch{status.textContent='Copy was blocked. Select the prompt above and copy it manually.'}
-      });
-    })();
-  </script>
 </body>
 </html>

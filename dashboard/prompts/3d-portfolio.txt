@@ -1,0 +1,7 @@
+Build a dark 3D creator portfolio concept for a fictional artist named Jack. This independently written recreation brief belongs to Frontend Frames; visual reference: MotionSites AI, https://motionsites.ai/.
+
+Use React, TypeScript, Tailwind CSS, and Framer Motion. Open with a full-height charcoal hero, a thin four-link navigation row, enormous gradient HI, I'M JACK lettering, and a sculptural portrait centered low in the frame. Balance a short creator statement against a bright rounded contact button. Give the portrait a restrained magnetic response to pointer movement.
+
+Below the hero, show two horizontal strips of selected design imagery that translate in opposite directions with page scroll. Add an About section with sparse 3D objects near the corners and a paragraph whose characters brighten as the section enters view. Follow with a white Services section listing five numbered capabilities. End with three dark project studies in large rounded cards that stack as the reader scrolls; each has a compact category, title, action, and an asymmetric image grid.
+
+Make every navigation link and action work. If no actual contact endpoint or live project URL was supplied, explain that the portfolio is a concept rather than pretending to send a message. Use descriptive alt text, lazy load below-the-fold media, respect reduced motion, and keep the route usable on narrow and wide screens.

@@ -1,0 +1,7 @@
+Create a responsive storybook voyage landing page called Saltwake. This independently written recreation brief is part of Frontend Frames. Visual reference: MotionSites AI, https://motionsites.ai/.
+
+Fill the viewport with warm parchment inside a thick rounded ink frame. Keep a small anchor mark and compact voyage navigation above a scene. The opening composition pairs an oversized old-style serif title and a pill-shaped Set sail button on the left with an illustrated pirate galleon on the right. Build rolling black ink waves as live SVG paths; let the vessel bob and tilt with their slope. Add a softly moving palm shadow across the paper.
+
+Pressing Set sail, selecting Crew, or scrolling down should transition in one continuous motion to a second scene: water rises, the ship recedes, and a palm, captain, chest, and plants enter from the left. Reveal a Rules of the crew headline and a working Voyage again button. Voyages or upward scrolling returns to the opening scene. Use keyboard controls where practical, keep the archive back link available, and respect reduced motion.
+
+Use semantic HTML, CSS, and a small JavaScript render loop. Reuse the supplied art only where licensed; otherwise draw distinct original sprites. Scale the scene to fit landscape and portrait screens without cropping the primary controls. Provide visible focus, meaningful image descriptions, and no fake outbound navigation.

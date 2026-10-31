@@ -1,0 +1,7 @@
+Design a one-screen interactive space poster for Lumora, a fictional 3D studio. This is an independently written Frontend Frames recreation brief; visual reference: MotionSites AI, https://motionsites.ai/.
+
+Place a friendly space cadet in a white, orange, and teal suit against deep navy and an orange planetary horizon. Above the character, set a glowing SKYRANGER headline, a spaced CADET eyebrow, and a short subtitle. Keep a colorful disc mark in the upper-left corner, a real menu button in the upper-right, and small bottom captions.
+
+Make the cadet feel responsive: blend a separately supplied head-turn video over the still image and seek through it from left to right as the pointer moves. The video must never autoplay. An actual PUSH ME button on the chest toggles a transparent glass helmet with a soft drop animation and correct aria-pressed state. Make the menu open an accessible navigation panel. On fine pointers, a dot and trailing ring can replace the ordinary cursor.
+
+Keep the hero readable on phones with the cadet framed below the copy. Under reduced motion, show the still plate and keep helmet and menu controls working. Use a static HTML/CSS/JavaScript route, optimize media loading, and include a clear link back to Frontend Frames.
