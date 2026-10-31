@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#eeece7">
-  <meta name="description" content="Ariefz Frames: an index of live interface experiments with their original build prompts.">
-  <title>Ariefz Frames — Interface Archive</title>
+  <meta name="description" content="Frontend Frames: an expanding collection of interactive web designs and copyable recreation prompts.">
+  <title>Frontend Frames — Interface Archive</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23eeece7'/%3E%3Cpath d='M13 13h38v38H13z' fill='none' stroke='%231F3FB0' stroke-width='3'/%3E%3Cpath d='M22 41V22h19M22 31h15' fill='none' stroke='%231F3FB0' stroke-width='4'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -103,8 +103,8 @@
 </head>
 <body>
   <header class="mast page">
-    <div class="mast-top micro"><span>ARIEFZ / INTERFACE ARCHIVE</span><span>INDEPENDENT WEB EXPERIMENTS</span></div>
-    <h1>Ariefz <span>Frames</span></h1>
+    <div class="mast-top micro"><span>FRONTEND FRAMES / INTERFACE ARCHIVE</span><span>INDEPENDENT WEB EXPERIMENTS</span></div>
+    <h1>Frontend <span>Frames</span></h1>
     <p class="mast-sub">A home for interfaces worth opening, exploring, and learning from.</p>
     <nav aria-label="Primary"><ul class="mast-nav"><li><a href="#collection">Collection</a></li><li><a href="https://github.com/ariefzzz5421/Frontend-Design" target="_blank" rel="noopener noreferrer">Repository ↗</a></li></ul></nav>
     <div class="double-rule" aria-hidden="true"></div>
@@ -113,13 +113,13 @@
   <main class="page" id="collection">
     <section aria-labelledby="collection-title">
       <div class="collection-head">
-        <h2 id="collection-title">Selected design</h2>
-        <p class="count micro">01 / 01</p>
+        <h2 id="collection-title">Selected designs</h2>
+        <p class="count micro">02 / 02</p>
       </div>
       <div class="filter-line micro"><span>All work</span><span>Browse the live page or its build prompt</span></div>
       <div class="project-grid">
         <article class="project">
-          <a class="project-media" href="https://frontend-design-woad.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Leon Vasari filmography">
+          <a class="project-media" href="./designs/leon-vasari/" aria-label="Open Leon Vasari filmography">
             <img src="./media/leon-vasari.png" width="1440" height="900" alt="Leon Vasari filmography: a row of illustrated VHS tapes with one cover turned toward the viewer" loading="eager" decoding="async">
           </a>
           <div class="project-info">
@@ -128,8 +128,23 @@
             <p>A shelf of fictional films on VHS. Pull out a tape, turn its cover, and open the story behind it.</p>
             <div class="project-details micro"><span>HTML / CSS / JS</span><span>2026</span></div>
             <div class="project-actions">
-              <a class="action primary" href="https://frontend-design-woad.vercel.app/" target="_blank" rel="noopener noreferrer">Open live site ↗</a>
-              <button class="action" type="button" id="show-prompt">View & copy prompt</button>
+              <a class="action primary" href="./designs/leon-vasari/">Explore design ↗</a>
+              <button class="action show-prompt" type="button" data-prompt="./prompts/leon-vasari.txt" data-title="Leon Vasari" data-number="01">View & copy prompt</button>
+            </div>
+          </div>
+        </article>
+        <article class="project">
+          <a class="project-media" href="./designs/orvante/" aria-label="Open Orvante branding agency design">
+            <img src="./media/orvante.png" width="1440" height="900" alt="Orvante branding agency: monochrome editorial hero with an oversized title and portrait" loading="lazy" decoding="async">
+          </a>
+          <div class="project-info">
+            <p class="project-type micro">02 / Branding · Editorial</p>
+            <h3>Orvante</h3>
+            <p>A fictional branding studio in monochrome: bold type, moving imagery, a manifesto, and a playful agency story.</p>
+            <div class="project-details micro"><span>HTML / CSS / JS</span><span>2026</span></div>
+            <div class="project-actions">
+              <a class="action primary" href="./designs/orvante/">Explore design ↗</a>
+              <button class="action show-prompt" type="button" data-prompt="./prompts/orvante.txt" data-title="Orvante" data-number="02">View & copy prompt</button>
             </div>
           </div>
         </article>
@@ -137,17 +152,17 @@
     </section>
     <aside class="source-note" aria-label="About the collection">
       <h2>See the result.<br>Keep the recipe.</h2>
-      <p>Each entry links to its working site and the complete prompt used as its starting brief. The archive currently contains one finished design; new entries will be added as they are built.</p>
+      <p>Each frame opens as a page in this collection. Copy an independently written recreation prompt to explore how its layout and interactions were built. More designs will join the archive.</p>
     </aside>
   </main>
 
-  <footer class="foot page"><span class="micro">© 2026 ARIEFZ FRAMES</span><span class="micro">CURATED BY ARIEFZ · <a href="https://ariefz.xyz/" target="_blank" rel="noopener noreferrer">ARIEFZ.XYZ ↗</a></span></footer>
+  <footer class="foot page"><span class="micro">© 2026 FRONTEND FRAMES · ORIGINAL DESIGN REFERENCE: <a href="https://motionsites.ai/" target="_blank" rel="noopener noreferrer">MOTIONSITES AI © 2026 ↗</a></span><span class="micro">CURATED BY ARIEFZ · <a href="https://ariefz.xyz/" target="_blank" rel="noopener noreferrer">ARIEFZ.XYZ ↗</a></span></footer>
 
   <dialog class="prompt-dialog" id="prompt-dialog" aria-labelledby="prompt-title">
     <div class="prompt-inner">
-      <div class="prompt-head"><div><span class="micro">BUILD PROMPT / 01</span><h2 id="prompt-title">Leon Vasari</h2></div><button class="prompt-close" type="button" id="close-prompt" aria-label="Close prompt">×</button></div>
-      <div class="prompt-body"><pre id="prompt-text">Loading the original prompt…</pre></div>
-      <div class="prompt-foot"><p class="prompt-status" id="prompt-status" role="status">The complete brief is shown above.</p><button class="action primary" type="button" id="copy-prompt" disabled>Copy full prompt</button></div>
+      <div class="prompt-head"><div><span class="micro" id="prompt-number">RECREATION PROMPT / 01</span><h2 id="prompt-title">Leon Vasari</h2></div><button class="prompt-close" type="button" id="close-prompt" aria-label="Close prompt">×</button></div>
+      <div class="prompt-body"><pre id="prompt-text">Loading prompt…</pre></div>
+      <div class="prompt-foot"><p class="prompt-status" id="prompt-status" role="status">The recreation prompt is shown above.</p><button class="action primary" type="button" id="copy-prompt" disabled>Copy prompt</button></div>
     </div>
   </dialog>
 
@@ -155,34 +170,37 @@
     (() => {
       'use strict';
       const dialog=document.querySelector('#prompt-dialog');
-      const openButton=document.querySelector('#show-prompt');
+      const openButtons=[...document.querySelectorAll('.show-prompt')];
       const closeButton=document.querySelector('#close-prompt');
       const copyButton=document.querySelector('#copy-prompt');
       const text=document.querySelector('#prompt-text');
       const status=document.querySelector('#prompt-status');
-      let prompt=null,request=null,returnFocus=null;
-      async function loadPrompt(){
-        if(prompt!==null)return prompt;
-        if(!request)request=fetch('./prompts/leon-vasari.txt').then(response=>{
+      const cache=new Map();
+      let prompt=null,returnFocus=null,selection=0;
+      async function loadPrompt(path){
+        if(!cache.has(path))cache.set(path,fetch(path).then(response=>{
           if(!response.ok)throw new Error('Prompt request failed');
           return response.text();
-        }).then(value=>{prompt=value;return value}).catch(error=>{request=null;throw error});
-        return request;
+        }).catch(error=>{cache.delete(path);throw error}));
+        return cache.get(path);
       }
-      openButton.addEventListener('click',async()=>{
+      openButtons.forEach(button=>button.addEventListener('click',async()=>{
+        const current=++selection;
+        prompt=null;
         returnFocus=document.activeElement;
+        document.querySelector('#prompt-title').textContent=button.dataset.title;
+        document.querySelector('#prompt-number').textContent='RECREATION PROMPT / '+button.dataset.number;
         dialog.showModal();
         closeButton.focus();
-        if(prompt!==null){text.textContent=prompt;copyButton.disabled=false;status.textContent='The complete original brief is shown above.';return}
-        text.textContent='Loading the original prompt…';
+        text.textContent='Loading prompt…';
         status.textContent='Loading prompt…';
         copyButton.disabled=true;
-        try{ text.textContent=await loadPrompt();copyButton.disabled=false;status.textContent='The complete original brief is shown above.' }
-        catch{ text.textContent='The prompt could not load. Please try opening this page again.';status.textContent='Could not load the prompt.' }
-      });
+        try{const value=await loadPrompt(button.dataset.prompt);if(current!==selection)return;prompt=value;text.textContent=value;copyButton.disabled=false;status.textContent='The recreation prompt is ready to copy.'}
+        catch{if(current!==selection)return;text.textContent='The prompt could not load. Please try again.';status.textContent='Could not load the prompt.'}
+      }));
       closeButton.addEventListener('click',()=>dialog.close());
       dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
-      dialog.addEventListener('close',()=>{returnFocus?.focus();copyButton.textContent='Copy full prompt'});
+      dialog.addEventListener('close',()=>{selection++;returnFocus?.focus();copyButton.textContent='Copy prompt'});
       copyButton.addEventListener('click',async()=>{
         if(prompt===null)return;
         try{

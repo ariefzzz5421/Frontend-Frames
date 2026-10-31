@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://frontend-frames.vercel.app/designs/leon-vasari/",
+      "permanent": false
+    }
+  ]
+}

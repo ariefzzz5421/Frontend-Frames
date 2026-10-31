@@ -1,0 +1,9 @@
+Build an original single-page branding studio concept named Orvante for the Frontend Frames collection. This recreation prompt is independently written; visual reference: MotionSites AI (https://motionsites.ai/).
+
+At desktop width, use a restrained grayscale editorial artboard. In the hero, put a floating pill navigation at upper left and date plus a dark contact button at upper right. Set an oversized condensed PURE DESIGN headline on the left. Place a dramatic monochrome portrait partly behind the headline, with a translucent Orvante brand plate across it. Balance the composition with a growth badge, compact project card, availability note, and two small statistic cards. Use tight typography, crisp borders, and restrained spacing.
+
+Follow with a short black divider bar, then a dark manifesto section. As the user scrolls, progressively brighten the words of one centered statement. End with a trust section: a bold heading, abstract mark, collaboration total, a row of avatar portraits, and an awards card. Treat statistics and client names as fictional concept content, never as verified claims.
+
+Animate hero elements on entry and numeric counters when visible. Provide a reduced-motion version with all content immediately readable. Add a narrow-screen composition that retains the navigation, headline, portrait, project card, manifesto, and trust content without horizontal overflow. Include working anchor links and a back link to the collection. If contact is only conceptual, explain this clearly when its button is pressed instead of pretending a booking was made.
+
+Implement as semantic HTML, CSS, and small vanilla JavaScript. Optimize images, use accessible labels and visible focus, and make the result deployable as a static route under /designs/orvante/.
