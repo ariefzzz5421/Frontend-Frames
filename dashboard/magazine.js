@@ -2,7 +2,6 @@
   'use strict';
   const stories = [...document.querySelectorAll('.story')];
   const filters = [...document.querySelectorAll('.filter')];
-  const grid = document.querySelector('#stories');
   const shown = document.querySelector('#shown-count');
   const promptDialog = document.querySelector('#prompt-dialog');
   const promptText = document.querySelector('#prompt-text');
@@ -23,7 +22,6 @@
       story.hidden = !visible;
       if (visible) count++;
     });
-    grid.classList.toggle('is-filtered', value !== 'all');
     shown.textContent = String(count).padStart(2, '0');
   }));
 

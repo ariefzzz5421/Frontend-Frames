@@ -1,6 +1,6 @@
 # Frontend Frames
 
-An expanding collection of interactive web design concepts. The canonical site is `https://frontend-frames.vercel.app/`.
+An expanding collection of interactive web design concepts. The canonical site is `https://frontend-frames.vercel.app/`. The magazine homepage presents one design per editorial row, with filters and copyable recreation briefs.
 
 | Route | Design | Recreation prompt |
 | --- | --- | --- |
@@ -30,7 +30,7 @@ npm install
 npm run build
 ```
 
-The detailed pages use remote artwork or 3D models, so those visuals need an internet connection. The Phoenix guide has an illustration fallback if its 3D models cannot load.
+Some detailed pages use remote artwork, so those visuals need an internet connection. The Phoenix guide serves optimized 3D models from `dashboard/models/` (about 5 MB and 3.8 MB) and has an illustration fallback with retry if a model cannot load.
 
 ## Add another design
 
