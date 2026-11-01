@@ -6,6 +6,15 @@
   <meta name="theme-color" content="#eeece7">
   <meta name="description" content="Frontend Frames is an editorial archive of six interactive web design worlds, each with its own page and copyable recreation brief.">
   <title>Frontend Frames — An Interface Magazine</title>
+  <script>
+    (() => {
+      let theme;
+      try { theme = localStorage.getItem('frontend-frames.theme'); } catch {}
+      if (theme !== 'dark' && theme !== 'light') theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.dataset.theme = theme;
+      document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#1d1d21' : '#eeece7';
+    })();
+  </script>
   <link rel="icon" href="./favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +27,7 @@
   <header class="shell" id="top">
     <div class="utility micro">
       <div class="utility-left"><span class="issue-mark">FF / 001</span><span>Independent interface journal</span></div>
-      <div class="utility-right"><span class="edition">Digital edition · 2026</span><a href="https://github.com/ariefzzz5421/Frontend-Frames" target="_blank" rel="noopener noreferrer">Repository ↗</a></div>
+      <div class="utility-right"><span class="edition">Digital edition · 2026</span><a href="https://github.com/ariefzzz5421/Frontend-Frames" target="_blank" rel="noopener noreferrer">Repository ↗</a><div class="theme-switch" role="group" aria-label="Color theme"><button type="button" data-theme-choice="light" aria-label="Light mode" title="Light mode" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button><button type="button" data-theme-choice="dark" aria-label="Dark mode" title="Dark mode" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.7 14.1A8.7 8.7 0 0 1 9.9 3.3 8.8 8.8 0 1 0 20.7 14.1Z"/></svg></button></div></div>
     </div>
     <div class="masthead">
       <h1>Frontend<span>Frames.</span></h1>

@@ -1,6 +1,6 @@
 # Frontend Frames
 
-An expanding collection of interactive web design concepts. The canonical site is `https://frontend-frames.vercel.app/`. The magazine homepage presents one design per editorial row, with filters and copyable recreation briefs.
+An expanding collection of interactive web design concepts. The canonical site is `https://frontend-frames.vercel.app/`. The magazine homepage presents one design per editorial row, with filters, copyable recreation briefs, and a saved light/dark theme choice that initially follows the device setting.
 
 | Route | Design | Recreation prompt |
 | --- | --- | --- |

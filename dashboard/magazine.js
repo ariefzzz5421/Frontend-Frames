@@ -1,5 +1,25 @@
 (() => {
   'use strict';
+  const themeKey = 'frontend-frames.theme';
+  const themeButtons = [...document.querySelectorAll('[data-theme-choice]')];
+  const systemTheme = matchMedia('(prefers-color-scheme: dark)');
+  let themeOverride = false;
+  try { themeOverride = ['light', 'dark'].includes(localStorage.getItem(themeKey)); } catch {}
+
+  function applyTheme(theme, persist = false) {
+    document.documentElement.dataset.theme = theme;
+    document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#1d1d21' : '#eeece7';
+    themeButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.themeChoice === theme)));
+    if (persist) {
+      themeOverride = true;
+      try { localStorage.setItem(themeKey, theme); } catch {}
+    }
+  }
+
+  applyTheme(document.documentElement.dataset.theme || (systemTheme.matches ? 'dark' : 'light'));
+  themeButtons.forEach(button => button.addEventListener('click', () => applyTheme(button.dataset.themeChoice, true)));
+  systemTheme.addEventListener?.('change', event => { if (!themeOverride) applyTheme(event.matches ? 'dark' : 'light'); });
+
   const stories = [...document.querySelectorAll('.story')];
   const filters = [...document.querySelectorAll('.filter')];
   const shown = document.querySelector('#shown-count');
