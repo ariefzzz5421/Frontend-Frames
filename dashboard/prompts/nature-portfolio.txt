@@ -1,0 +1,11 @@
+NATURE PORTFOLIO — INDEPENDENT RECREATION BRIEF
+
+Build a fictional wildlife photographer's field journal called Ethan Vale. Make the experience feel like a dark photographic exhibition: black canvas, warm white serif type, restrained sans-serif UI, generous negative space, and pictures as the main event.
+
+The first scene is an optional short film with an immediately visible Skip control. When it finishes, reveal a centered 3D sphere of 21 wildlife photographs. Position the images with a Fibonacci sphere distribution. Place the title “I See Through the Wild” at the same center point as the sphere, facing the viewer. Dragging rotates the photographs with gentle inertia; a short vertical scroll moves the camera slightly forward. Keep the title centered through rotation.
+
+Include a fixed photographer identity, subtle instructions, a menu, and a grid button. In grid view, display all photographs in a responsive masonry-like arrangement with captions. Selecting any photograph opens a large lightbox with title, location, and field note. Show a small optimized thumbnail immediately, then replace it with the full image after it loads. Escape and visible Close controls should work. Make the grid keyboard accessible.
+
+Use mobile-specific sizing for the title and sphere. Preserve vertical swiping on touchscreens, avoid horizontal overflow, and respect reduced-motion preferences. Optimize the photographs before shipping and defer full-resolution stills until the lightbox opens. All people, places, and field notes in this sample archive are fictional concept content.
+
+Reference inspiration: MotionSites AI — https://motionsites.ai/

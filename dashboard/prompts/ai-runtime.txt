@@ -1,0 +1,11 @@
+AI RUNTIME — INDEPENDENT RECREATION BRIEF
+
+Create a single-viewport cinematic landing page for a fictional modular AI platform. Use a black base and a full-bleed looping film behind the interface. Keep the video muted, inline, and non-interactive, with a dark static fallback if it cannot load. The core composition has three vertical zones: compact navigation at the top, centered hero content, and four compact metrics at the bottom.
+
+In the header, place a simple circular mark, a white pill navigation with Home, Product, Case Studies, and Contact, plus a dark Sign in pill. On narrow screens, replace the desktop links with an accessible menu button and closeable mobile sheet. Buttons must have real responses; if there is no product backend, explain that this is a design concept instead of pretending that sign-in works.
+
+Above the hero heading, include a small overlapping-symbol trust motif and a short descriptor. Set the two-line heading “Intelligence / Designed To Evolve” in white retro dot-matrix style. Under it, use a short product description and a glowing white Get Started pill. Keep the heading legible over every video frame using dark overlays, not a changing gradient on the letters.
+
+At the bottom, arrange four illustrative figures in one row on desktop and two columns on mobile. Label them clearly as concept metrics. Use restrained entrance motion and a reduced-motion mode that shows the same information without animation or video. Ensure the complete composition fits the viewport on common screen sizes and can scroll on unusually short screens.
+
+Reference inspiration: MotionSites AI — https://motionsites.ai/

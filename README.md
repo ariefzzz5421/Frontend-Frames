@@ -11,6 +11,8 @@ An expanding collection of interactive web design concepts. The canonical site i
 | `/designs/lumora/` | Interactive Cadet Skyranger hero | `/prompts/lumora.txt` |
 | `/designs/3d-portfolio/` | Fictional creator portfolio | `/prompts/3d-portfolio.txt` |
 | `/designs/phoenix-ignis/` | 3D creature field guide | `/prompts/phoenix-ignis.txt` |
+| `/designs/nature-portfolio/` | Interactive wildlife photo archive | `/prompts/nature-portfolio.txt` |
+| `/designs/ai-runtime/` | Cinematic AI platform concept | `/prompts/ai-runtime.txt` |
 
 The deployed Vercel project serves `dashboard/` as its root directory. The former Leon Vasari project at `frontend-design-woad.vercel.app` redirects to its route in Frontend Frames. The custom domain `frames.ariefz.xyz` is attached to the collection project but requires its DNS CNAME at the domain provider before it will resolve.
 
@@ -22,7 +24,7 @@ From the repository root:
 python -m http.server 4747 --directory dashboard
 ```
 
-Open `http://localhost:4747/`. The gallery and three new designs are static HTML, CSS, and JavaScript. The 3D Portfolio is authored in React, TypeScript, and Tailwind in `experiments/3d-portfolio/`; its Vite output is committed to `dashboard/designs/3d-portfolio/` so the deployed site remains static. Rebuild it after source changes:
+Open `http://localhost:4747/`. The gallery and standalone designs are static HTML, CSS, and JavaScript. The 3D Portfolio is authored in React, TypeScript, and Tailwind in `experiments/3d-portfolio/`; its Vite output is committed to `dashboard/designs/3d-portfolio/` so the deployed site remains static. Rebuild it after source changes:
 
 ```sh
 cd experiments/3d-portfolio
@@ -30,7 +32,7 @@ npm install
 npm run build
 ```
 
-Some detailed pages use remote artwork, so those visuals need an internet connection. The Phoenix guide serves optimized 3D models from `dashboard/models/` (about 5 MB and 3.8 MB) and has an illustration fallback with retry if a model cannot load.
+Some detailed pages use remote artwork or video, so those visuals need an internet connection. Nature Portfolio ships optimized local thumbnails and loads full-resolution photographs only when opened. AI Runtime serves a compressed local copy of the supplied video footage (about 460 KB). The Phoenix guide serves optimized 3D models from `dashboard/models/` (about 5 MB and 3.8 MB) and has an illustration fallback with retry if a model cannot load.
 
 ## Add another design
 
